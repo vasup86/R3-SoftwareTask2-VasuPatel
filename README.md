@@ -20,7 +20,7 @@ The picture below show when the *3* is pressed to set the speed and the directio
 ![Screenshot (196)](https://user-images.githubusercontent.com/83378929/138540306-b1d5270b-d203-48d9-98ca-7f1626d2c7f4.png)    
   
 
-The picture below show when the *5* is pressed to set the speed and the direction is forward (w / 87), all four motors are spinning forward at speed 255. When the direction is reverse (s / 83), all 4 motors are spinning back. When the direction is right (d / 68), left motors are spinning forward and right motors and spinning back to turn right. When the direction is left (a / 65), left motors are spinning back and right motors and spinning forward to turn left.
+The picture below show when the *5* is pressed to set the speed and the direction is forward (w / 87), all four motors are spinning forward at speed 255. When the direction is reverse (s / 83), all 4 motors are spinning back. When the direction is right (d / 68), left motors are spinning forward and right motors and spinning back to turn right. When the direction is left (a / 65), left motors are spinning back and right motors and spinning forward to turn left. The IP and Port, show the message received from the client.
 
 ![Screenshot (197)](https://user-images.githubusercontent.com/83378929/138540308-cbc827b6-9fd6-4abc-bc2a-394c1058005d.png)
 

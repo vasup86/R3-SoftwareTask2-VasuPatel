@@ -46,16 +46,10 @@ def server_client(conn, addr):  #individual client connection
             roverOutput(msg)
     print("Connection Closed")
     conn.close()      #close the client connection to the server
-
-
-def getClient(): #listen for client to join
-    server.listen()
-    while True:
-        #When a new connection occurs, The IP adress and port is saved in address
-        #connection, stores its object which allows to communicate with the client
-        connection, address = server.accept() 
-        server_client(connection, address)
+     
 
 print("Starting Server")
 print(f"Server IP: {IP}")
-getClient()
+server.listen() #listen for client to join
+connection, address = server.accept() 
+server_client(connection, address)

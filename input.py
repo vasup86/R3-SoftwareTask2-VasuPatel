@@ -14,20 +14,18 @@ keyCodeNum = [87,65,83,68,49,50,51,52,53,75] #w,a,s,d,1,2,3,4,5,k(kill the conne
 IP = socket.gethostbyname(socket.gethostname())  # The server's hostname or IP address
 PORT =  5050
 FORMAT = 'utf-8'
-client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-client.connect(((IP,PORT)))
+client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)   #client object
+client.connect(((IP,PORT)))  #connect client to the server
 
-
-
-#define the function
+#check if only key we want are pressed
 def check (pressed_key,key):
-    #check for only W,A,S,D for logging
+    #check for only W,A,S,D for logging and sending to the server
     for i in keyCodeNum:
         if (pressed_key == i):
             logging.info(str(key))
-            if (pressed_key == 75):
+            if (pressed_key == 75):   #if k is pressed, the server connection closes
                 client.send(bytes(str(75),FORMAT))
-            else:
+            else:   # else send the keycode
                 client.send(bytes(str(pressed_key),FORMAT))
 
 def on_press(key):
@@ -48,4 +46,4 @@ def on_release(key):
 with Listener(on_press=on_press, on_release = on_release) as listener:  #on_press=on_press is not calling them, creating it an instance.
     listener.join()
 
-#key is pressed, calls listner, calls the function and saves the info
+#key is pressed, calls listner, calls the function

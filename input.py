@@ -29,15 +29,12 @@ def check (pressed_key,key):
                 client.send(bytes(str(pressed_key),FORMAT))
 
 def on_press(key):
-    try:
-        pressed_key = key.vk    #get the pressed key value
-    except:
-        pressed_key = key.value.vk    #if its an special key like esc
+    pressed_key = key.vk    #get the pressed key int value
     print(pressed_key)
     check (pressed_key,key)   #check if pressed key is 1-5 or wasd
     
 def on_release(key):
-    if key == keyboard.Key.esc:  #esc key stops the listner
+    if (key.vk) == 88:  #x key stops the listner
         # Stop listener
         return False
 
